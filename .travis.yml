@@ -33,4 +33,4 @@ script:
 after_success:
   - mvn clean install -Pit-test
   - mvn sonar:sonar -Psonar-apache
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) || echo 'Codecov failed to upload'
