@@ -28,7 +28,7 @@ before_install:
 
 script:
   - travis_retry mvn -B clean apache-rat:check
-  - travis_retry mvn -B package jacoco:report coveralls:report
+  - mvn cobertura:cobertura
 
 after_success:
   - mvn clean install -Pit-test
